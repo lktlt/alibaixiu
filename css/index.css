@@ -1,0 +1,184 @@
+/* 根据设计稿，修改container最大宽度为1280 */
+@media screen and (min-width: 1280px){
+    .container {
+        width: 1280px;
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #f5f5f5;
+}
+ul {
+    list-style: none;
+
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.header {
+    /* 每一列都有个左右15px的padding值 */
+    /* 注意权重问题 */
+    padding-left: 0!important;
+}
+/* logo */
+.logo {
+    background-color: #429ad9;
+   
+}
+
+.logo img {
+    /* width: 100%; */
+    display: block;
+    /* 图片宽度大于父级时，使用父级宽度 */
+    max-width: 100%;
+    margin: 0 auto;
+}
+/* 进入超小屏幕下，就隐藏图片 img盒子*/
+/* 进入超小屏幕下，就只显示文字，span盒子 */
+.logo span {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+/* 导航 */
+.nav {
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+}
+.nav ul li a {
+    display: block;
+    color: #666;
+    height: 50px;
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 50px;
+}
+.nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+}
+.nav ul li a::before {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+/* 新闻 */
+.new ul li{
+    float: left;
+    width: 25%;
+    height: 128px;
+    margin-bottom: 10px;
+}
+.new ul li:nth-child(1) {
+    width: 50%;
+    height: 266px;
+    padding-right: 10px;
+}
+.carousel,
+.carousel img{
+    width: 100%;
+    height: 266px!important;
+}
+/* 当进入小和超小屏幕时，nav li浮动起来 并且宽度为20% */
+/* 利用媒体查询 */
+@media screen and (max-width: 991px){
+    .nav li {
+        float: left;
+        width: 20%;
+    }
+    .article {
+        margin-top: 10px;
+    }
+}
+/* 处于超小屏幕时，第一个li占100% ，其余各站50% */
+@media screen and (max-width: 767px){
+    .nav li a {
+       font-size: 14px;
+       padding-left: 0px;
+    }
+    .new ul li:nth-child(1) {
+        width: 100%;
+    }
+    .new ul li:nth-child(n+2) {
+        width: 50%;
+    }
+    .publish h3 {
+        font-size: 14px;
+    }
+}
+
+.new li>a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.new li a img {
+    width: 100%;
+    height: 100%;
+}
+.carousel-caption {
+    font-size: 16px!important;
+    line-height: 41px;
+    padding: 0;
+}
+.new li a p,
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 41px;
+    /* bootstrap 里 p 默认有一个10px的下外边距 */
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 3px 10px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+}
+.new li:nth-child(1) a p {
+    line-height: 41px;
+    padding-top: 0;
+    font-size: 20px;
+}
+
+/* publish模块 */
+.publish {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.publish .row img {
+    width: 100%;
+    height: 100%;
+}
+.pic {
+    margin-top: 10px;
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+.hot {
+    display: block;
+    margin-top: 20px;
+    padding: 0 20px 20px;
+    border: 1px solid #ccc;
+}
+.hot span {
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+.hot p {
+    font-size: 12px;
+
+}
